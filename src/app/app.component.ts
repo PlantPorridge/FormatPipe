@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  testValues = [0, 1000, -1000, 500.555, 0.000001, 1.000005, 0.682287199917446785, "0.682287199917446785"];
+  // testValues = [0, 1000, -1000, 500.555, 0.000001, 1.000005, 0.682287199917446785, "0.682287199917446785"];
+  // testPrecisionSpecifiers = [0, 2, 5];
+  // testFormatSpecifiers = ['d','c', 'p', 'n'];//['x', 'X', 'n', 'c', 'p', 'd'];
+
+    testValues = [0, 1000, -1000];
   testPrecisionSpecifiers = [0, 2, 5];
-  testFormatSpecifiers = ['g'];//['x', 'X', 'n', 'c', 'p', 'd'];
+  testFormatSpecifiers = ['n'];//['x', 'X', 'n', 'c', 'p', 'd'];
 }
