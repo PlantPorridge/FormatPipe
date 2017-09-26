@@ -10,7 +10,7 @@ export class AppComponent {
   // testPrecisionSpecifiers = [0, 2, 5];
   // testFormatSpecifiers = ['d','c', 'p', 'n'];//['x', 'X', 'n', 'c', 'p', 'd'];
 
-    testValues = [0, 1000, -1000];
-  testPrecisionSpecifiers = [0, 2, 5];
+  testValues = [0, 1000, -1000, 10.01];
+  testPrecisionSpecifiers = ['', 0, 2, 5];
   testFormatSpecifiers = ['n'];//['x', 'X', 'n', 'c', 'p', 'd'];
 }

@@ -41,7 +41,7 @@ export class FormatPipe implements PipeTransform {
 
   numericTransform(value: string | number, format: string): string {
     let formatSpecifier = format[0];
-    let precisionSpecifier = Math.min(20, +format.slice(1)).toString();
+    let precisionSpecifier = format.length == 1 ? null : Math.min(20, +format.slice(1)).toString();
     let formattedValue = value.toString();
     var formatter: IFormat = Formats.getFormatter(formatSpecifier);
     return formatter.Transform(value, precisionSpecifier, this.locale);
