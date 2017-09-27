@@ -3,11 +3,15 @@ language: node_js
 node_js:
   - stable
 
+branches:
+   only:
+      - master
+
 before_script:
   - npm install -g @angular/cli
 
 install:
-  - ng build
+  - ng build --prod
 
 script:
   - ng test
