@@ -6,6 +6,9 @@ branches:
    only:
       - master
 
+addons:
+  chrome: stable
+
 before_script:
    - npm install -g @angular/cli
 
