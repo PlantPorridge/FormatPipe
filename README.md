@@ -1,4 +1,4 @@
-# Format Pipe [![Build Status](https://travis-ci.org/PlantPorridge/FormatPipe.svg?branch=master)](https://travis-ci.org/PlantPorridge/FormatPipe)
+# Format Pipe [![Build Status](https://travis-ci.org/PlantPorridge/FormatPipe.svg?branch=master)](https://travis-ci.org/PlantPorridge/FormatPipe) [![Coverage Status](https://coveralls.io/repos/github/PlantPorridge/FormatPipe/badge.svg?branch=master)](https://coveralls.io/github/PlantPorridge/FormatPipe?branch=master)
 
 ## Synopsis
 
