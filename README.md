@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-This project provides a single Angular Pipe that takes any [Standard Numeric Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) from .NET and formats the value accordingly.
+This project provides a single Angular Pipe that takes any [Standard Numeric Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) from .NET and formats the value accordingly. It also covers all DateTime formats listed [here](https://next.angular.io/api/common/DatePipe).
 
 ## Motivation
 
