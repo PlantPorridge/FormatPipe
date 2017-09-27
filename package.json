@@ -1,6 +1,6 @@
 {
   "name": "ng-format-pipe",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A Angular Pipe to cover all standard numeric format strings accepted by .NET. It also allows for DateTime formats. The standard numeric format strings can be found here: https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings",
   "main": "index.d.ts",
   "keywords":[
