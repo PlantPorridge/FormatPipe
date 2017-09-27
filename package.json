@@ -1,7 +1,24 @@
 {
-  "name": "format-pipe",
-  "version": "0.0.0",
+  "name": "ng-format-pipe",
+  "version": "0.0.6",
+  "description": "A Angular Pipe to cover all standard numeric format strings accepted by .NET. It also allows for DateTime formats. The standard numeric format strings can be found here: https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings",
+  "main": "index.d.ts",
+  "keywords":[
+    "Angular", "Pipe", "Format"
+  ],
+  "author": {
+    "name": "Elliot Wilkinson",
+    "email": "PlantPorridge@gmail.com",
+    "url": "elliot.wilkinson@wilkware.co.uk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PlantPorridge/FormatPipe.git"
+  },
   "license": "MIT",
+  "engines": {
+    "node": ">=6.9.5"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,20 +27,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
-    "@angular/animations": "^5.0.0-beta.7",
     "@angular/common": "^5.0.0-beta.7",
-    "@angular/compiler": "^5.0.0-beta.7",
     "@angular/core": "^5.0.0-beta.7",
-    "@angular/forms": "^5.0.0-beta.7",
-    "@angular/http": "^5.0.0-beta.7",
-    "@angular/platform-browser": "^5.0.0-beta.7",
-    "@angular/platform-browser-dynamic": "^5.0.0-beta.7",
-    "@angular/router": "^5.0.0-beta.7",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "@angular/platform-browser": "^5.0.0-beta.7"
   },
   "devDependencies": {
     "@angular/cli": "1.3.2",

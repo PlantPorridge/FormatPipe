@@ -3,7 +3,6 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormatPipe } from './pipes/format.pipe';
-import { DecimalPipe, PercentPipe, DatePipe, CurrencyPipe, CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -11,16 +10,10 @@ import { DecimalPipe, PercentPipe, DatePipe, CurrencyPipe, CommonModule } from "
     FormatPipe    
   ],
   imports: [
-    BrowserModule,
-    CommonModule
+    BrowserModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: "en-GB" },
-    DecimalPipe,
-    PercentPipe, 
-    DatePipe, 
-    CurrencyPipe
-
+    { provide: LOCALE_ID, useValue: "en-GB" }
   ],
   bootstrap: [AppComponent]
 })

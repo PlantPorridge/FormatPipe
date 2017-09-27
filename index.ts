@@ -1,0 +1,1 @@
+export { FormatPipe } from './src/app/pipes/format.pipe';

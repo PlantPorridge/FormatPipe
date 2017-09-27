@@ -38,7 +38,7 @@ export class FormatPipe implements PipeTransform {
       }
     }
     catch (exeception) {
-      console.error("Formatting failed. Formatting aborted.");
+      console.error("Formatting failed. Formatting aborted. " + exeception);
       return value;
     }
 

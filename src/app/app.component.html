@@ -1,18 +1,1 @@
-<div *ngFor="let formatS of testFormatSpecifiers">
-  <h3>{{formatS}}</h3>
-  <div *ngFor="let precisionS of testPrecisionSpecifiers">
-    <h5>{{precisionS}}</h5>
-    <div *ngFor="let value of testValues">
-      <span>{{value}} -> {{value | format:formatS + precisionS}}</span>
-    </div>
-  </div>
-</div>
-
-<!-- <p>{{'2010-01-01' | format:'shortDate'}}</p>
-
-
-<p>{{'2013-10-05' | date:'shortDate'}}</p>
-<p>{{'2013-10-05' | date:'yMd'}}</p>
-
-<p>{{'2013-10-05' | date:'shortTime'}}</p>
-<p>{{'2013-10-05' | date:'hm'}}</p> -->
+<span>{{5.00 | format:'n5'}}</span>
