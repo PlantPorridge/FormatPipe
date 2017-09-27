@@ -41,9 +41,9 @@ import { FormatPipe } from 'ng-format-pipe';
 value | format[:standardNumericFormat]
 ```
 
-**value** = The unformatted numeric value you wish to format
-**format** = The name of the pipe (this does not change)
-**standardNumericFormat** = The format you want to achieve (e.g. c2)
+**value** = The unformatted numeric value you wish to format   
+**format** = The name of the pipe (this does not change)   
+**standardNumericFormat** = The format you want to achieve (e.g. c2)   
 
 Example results:
 
@@ -78,7 +78,6 @@ ng test
 ## Contributors
 
 - Any contribution is appreciated.
-- If you are planning to add a new pipe (or any other feature), please open an issue before.
 - Angular [Commit Message Format](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) is preferred.
 
 #### Submitting a Pull Request (PR)
