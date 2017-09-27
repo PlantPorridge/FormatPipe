@@ -1,17 +1,14 @@
 language: node_js
-
 node_js:
-  - stable
+   - “7”
 
 branches:
    only:
       - master
 
 before_script:
-  - npm install -g @angular/cli
-
-install:
-  - ng build --prod
+   - npm install -g @angular/cli
 
 script:
-  - ng test
+   - ng build --prod
+   - ng test
