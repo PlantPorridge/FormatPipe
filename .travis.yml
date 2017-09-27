@@ -22,4 +22,4 @@ before_script:
 
 script:
    - ng build --prod
-   - ng test
+   - ng test --watch=false
