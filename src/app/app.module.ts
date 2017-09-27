@@ -8,8 +8,7 @@ import { DecimalPipe, PercentPipe, DatePipe, CurrencyPipe, CommonModule } from "
 @NgModule({
   declarations: [
     AppComponent,
-    FormatPipe,
-    
+    FormatPipe    
   ],
   imports: [
     BrowserModule,
