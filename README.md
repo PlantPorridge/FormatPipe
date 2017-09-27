@@ -1,28 +1,102 @@
-# FormatPipe
+# Format Pipe https://travis-ci.org/PlantPorridge/FormatPipe.svg?branch=master https://github.com/a8m/ng-pipes/blob/master/LICENSE
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+## Synopsis
 
-## Development server
+This project provides a single Angular Pipe that takes any [Standard Numeric Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) from .NET and formats the value accordingly.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Motivation
 
-## Code scaffolding
+Working in a .NET enviroment we have access to handy formatting of currencies, decimals, exponents and more thanks to [Standard Numeric Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings). Angular also provides great out-the-box formatting tools in the form of Pipes but doesn't cover all the cases from .NET nor does it provide a single formatting Pipe- You currently need to use a different Pipe for Currency, Decimal or Percentage. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The motivation behind this project stems from migrating a data-driven C#/.NET Application into Angular with a consistent backend. Values provided to Application were delivered in a standard numeric format along with the format string and the Application was tasked with displaying the value with the specified format. This Pipe has been created in order to have a single place to pump in the value and format and generate the formatted value with no additional code.
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```sh
+npm install --save ng-format-pipe
+```
 
-## Running unit tests
+```javascript
+import { FormatPipe } from 'ng-format-pipe';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  declarations: [
+    AppComponent,
+    FormatPipe
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: "en-GB" }
+  ],
+  bootstrap: [AppComponent]
+})
+```
 
-## Running end-to-end tests
+## How To Use
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+```javascript
+value | format[:standardNumericFormat]
+```
 
-## Further help
+**value** = The unformatted numeric value you wish to format
+**format** = The name of the pipe (this does not change)
+**standardNumericFormat** = The format you want to achieve (e.g. c2)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Example results:
+| value         | standardNumericFormat  | Result  |
+| ------------- |:-------------:| -----:     |
+| 123.456       | C2            | $123.46    |
+| 123456        | D10           | 0000123456 |
+| 123456        | E0            | 1E+5       |
+
+
+####Locale
+The Format Pipe will respect the locale set by you application.
+If you are using a locale outside of the default 'en' please ensure you load in the extra locale data:
+
+```javascript
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+//And then run this somewhere prior to using the Pipe.
+registerLocaleData(localeFr); 
+```
+
+## Tests
+
+Clone the repository then run:
+
+```sh
+npm install
+ng test
+```
+
+## Contributors
+
+- Any contribution is appreciated.
+- If you are planning to add a new pipe (or any other feature), please open an issue before.
+- Angular [Commit Message Format](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) is preferred.
+
+#### Submitting a Pull Request (PR)
+1. Clone the project via:
+  ```
+  $ git clone https://github.com/PlantPorridge/FormatPipe.git
+  ```
+  
+2. Make your changes in a new git branch:
+  ```
+  $ git checkout -b my-branch master
+  ```
+  
+3. Add your changes, including appropriate test cases.
+
+4. Push your branch to Github.
+
+5. Create a PR to master.
+
+## License
+
+MIT
