@@ -53,7 +53,7 @@ Example results:
 | 123456        | D10           | 0000123456 |
 | 123456        | E0            | 1E+5       |
 
-####Locale
+#### Locale
 
 The Format Pipe will respect the locale set by you application.
 If you are using a locale outside of the default 'en' please ensure you load in the extra locale data:
