@@ -1,4 +1,4 @@
-# Format Pipe https://travis-ci.org/PlantPorridge/FormatPipe.svg?branch=master https://github.com/a8m/ng-pipes/blob/master/LICENSE
+# Format Pipe [![Build Status](https://travis-ci.org/PlantPorridge/FormatPipe.svg?branch=master)](https://travis-ci.org/PlantPorridge/FormatPipe)
 
 ## Synopsis
 
@@ -46,14 +46,15 @@ value | format[:standardNumericFormat]
 **standardNumericFormat** = The format you want to achieve (e.g. c2)
 
 Example results:
+
 | value         | standardNumericFormat  | Result  |
-| ------------- |:-------------:| -----:     |
+| ------------- |:-------------| :-----     |
 | 123.456       | C2            | $123.46    |
 | 123456        | D10           | 0000123456 |
 | 123456        | E0            | 1E+5       |
 
-
 ####Locale
+
 The Format Pipe will respect the locale set by you application.
 If you are using a locale outside of the default 'en' please ensure you load in the extra locale data:
 
