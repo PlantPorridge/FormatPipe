@@ -19,7 +19,9 @@ branches:
 
 before_script:
    - npm install -g @angular/cli
+   - npm i istanbul jasmine coveralls -D
 
 script:
    - ng build --prod
    - ng test --watch=false
+   - npm run coveralls  

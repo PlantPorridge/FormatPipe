@@ -196,10 +196,6 @@ export class Formats {
     }
 }
 
-function transformToLocaleFormat(value: string, locale: string): string {
-    return NumericFormat.Transform(value, decimalPlaces(value).toString(), locale);
-}
-
 function decimalPlaces(num): number {
     var match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
     if (!match) { return 0; }

@@ -1,4 +1,4 @@
-import { DateFormat, CurrencyFormat, DecimalFormat, ExponentialFormat, ExponentialFormatUpper, FixedPointFormat, GeneralFormat, NumericFormat, GeneralFormatUpper, PercentFormat, RoundTripFormat, HexadecimalFormat, HexadecimalFormatUpper } from "./formats";
+import { DateFormat, CurrencyFormat, DecimalFormat, ExponentialFormat, ExponentialFormatUpper, FixedPointFormat, GeneralFormat, NumericFormat, GeneralFormatUpper, PercentFormat, RoundTripFormat, HexadecimalFormat, HexadecimalFormatUpper, Formats } from "./formats";
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
@@ -166,6 +166,7 @@ describe('GeneralFormat', () => {
     registerLocaleData(localeFr);
     
     it('defaults to constant precision', () => {
+        expect(GeneralFormat.Transform('', null, 'en-US')).toEqual('0e+0');        
         expect(GeneralFormat.Transform('12345', null, 'en-US')).toEqual('12345');
         expect(GeneralFormat.Transform('12345.6789', null, 'en-US')).toEqual('12345.6789');
         expect(GeneralFormat.Transform('.0000023', null, 'en-US')).toEqual('2.3e-6');
@@ -260,6 +261,10 @@ describe('RoundTripFormat', () => {
 });
 
 describe('HexadecimalFormat', () => {
+    it('makes no change if value is non-integer', () => {
+        expect(HexadecimalFormat.Transform('1.1313', null, 'en-US')).toEqual('1.1313');
+    });
+
     it('prefixes no zeros as default', () => {
         expect(HexadecimalFormat.Transform('0x2045e', null, 'en-US')).toEqual('2045e');
         expect(HexadecimalFormat.Transform('123456789', null, 'en-US')).toEqual('75bcd15');
@@ -271,6 +276,10 @@ describe('HexadecimalFormat', () => {
         
         expect(HexadecimalFormat.Transform('123456789', '2', 'en-US')).toEqual('75bcd15');
         expect(HexadecimalFormat.Transform('123456789', '8', 'en-US')).toEqual('075bcd15');        
+    });
+
+    it('formats negatives', () => {
+        expect(HexadecimalFormat.Transform('-123456789', null, 'en-US')).toEqual('f8a432eb');
     });
 });
 
@@ -288,3 +297,38 @@ describe('HexadecimalFormatUpper', () => {
         expect(HexadecimalFormatUpper.Transform('123456789', '8', 'en-US')).toEqual('075BCD15');        
     });
 });
+
+describe('GetFormatter', () => {
+    it('retrieves the correct formatter', () => {
+        expect(Formats.getFormatter('n')).toEqual(NumericFormat);
+        expect(Formats.getFormatter('N')).toEqual(NumericFormat);
+
+        expect(Formats.getFormatter('p')).toEqual(PercentFormat);
+        expect(Formats.getFormatter('P')).toEqual(PercentFormat);
+
+        expect(Formats.getFormatter('c')).toEqual(CurrencyFormat);
+        expect(Formats.getFormatter('C')).toEqual(CurrencyFormat);
+
+        expect(Formats.getFormatter('g')).toEqual(GeneralFormat);
+        expect(Formats.getFormatter('G')).toEqual(GeneralFormatUpper);
+
+        expect(Formats.getFormatter('f')).toEqual(FixedPointFormat);
+        expect(Formats.getFormatter('F')).toEqual(FixedPointFormat);
+
+        expect(Formats.getFormatter('e')).toEqual(ExponentialFormat);
+        expect(Formats.getFormatter('E')).toEqual(ExponentialFormatUpper);
+
+        expect(Formats.getFormatter('d')).toEqual(DecimalFormat);
+        expect(Formats.getFormatter('D')).toEqual(DecimalFormat);
+
+        expect(Formats.getFormatter('r')).toEqual(RoundTripFormat);
+        expect(Formats.getFormatter('R')).toEqual(RoundTripFormat);  
+
+        expect(Formats.getFormatter('x')).toEqual(HexadecimalFormat);
+        expect(Formats.getFormatter('X')).toEqual(HexadecimalFormatUpper);
+    });
+
+    it('retrieves null formatter', () => {
+        expect(Formats.getFormatter('zzzz')).toEqual(null);
+    });
+})
