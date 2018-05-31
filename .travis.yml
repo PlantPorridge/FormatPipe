@@ -19,6 +19,7 @@ branches:
 
 before_script:
    - npm install -g @angular/cli
+   - npm install -g @angular-devkit/build-angular
    - npm i istanbul jasmine coveralls -D
 
 script:
