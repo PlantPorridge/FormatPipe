@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "build_lib": "ng build --prod format-pipe",
     "npm_pack": "cd dist/format-pipe && npm pack",
-    "package": "npm run build_lib && npm run npm_pack"
+    "package": "npm run build_lib && npm run npm_pack",
+    "publish-pipe": "npm publish ./dist/format-pipe/"
   },
   "private": true,
   "dependencies": {

@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "include": [
     "./src/**/*.ts",
-    "./projects/**/format.pipe.ts"
+    // "./projects/**/format.pipe.ts"
   ],
   "exclude": [
     "./projects/**/*.ts"

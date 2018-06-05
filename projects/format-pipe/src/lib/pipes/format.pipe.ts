@@ -1,14 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { LOCALE_ID, Inject } from '@angular/core';
 import { Formats, DateFormat } from "../formats/formats";
-import { IFormat } from "../interfaces/format.interface";
+import { IFormat } from '../interfaces/format.interface';
 
 @Pipe({
   name: 'format'
 })
 export class FormatPipe implements PipeTransform {
 
-  constructor( @Inject(LOCALE_ID) private locale: string) { }
+  constructor(@Inject(LOCALE_ID) private locale: string) { }
 
   transform(value: any, format: any): string {
     if (typeof (format) != "string") {
