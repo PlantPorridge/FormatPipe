@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/format-pipe",
+            "outputPath": "dist/format-pipe-upgrade",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -115,6 +115,86 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "format-pipe-library": {
+      "root": "projects/format-pipe-library",
+      "sourceRoot": "projects/format-pipe-library/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/format-pipe-library/tsconfig.lib.json",
+            "project": "projects/format-pipe-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/format-pipe-library/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/format-pipe-library/src/test.ts",
+            "tsConfig": "projects/format-pipe-library/tsconfig.spec.json",
+            "karmaConfig": "projects/format-pipe-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/format-pipe-library/tsconfig.lib.json",
+              "projects/format-pipe-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "format-pipe": {
+      "root": "projects/format-pipe",
+      "sourceRoot": "projects/format-pipe/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/format-pipe/tsconfig.lib.json",
+            "project": "projects/format-pipe/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/format-pipe/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/format-pipe/src/test.ts",
+            "tsConfig": "projects/format-pipe/tsconfig.spec.json",
+            "karmaConfig": "projects/format-pipe/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/format-pipe/tsconfig.lib.json",
+              "projects/format-pipe/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

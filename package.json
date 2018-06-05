@@ -1,26 +1,6 @@
 {
-  "name": "ng-format-pipe",
-  "version": "0.0.8",
-  "description": "A Angular Pipe to cover all standard numeric format strings accepted by .NET. It also allows for DateTime formats. The standard numeric format strings can be found here: https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings",
-  "main": "index.d.ts",
-  "keywords": [
-    "Angular",
-    "Pipe",
-    "Format"
-  ],
-  "author": {
-    "name": "Elliot Wilkinson",
-    "email": "PlantPorridge@gmail.com",
-    "url": "elliot.wilkinson@wilkware.co.uk"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/PlantPorridge/FormatPipe.git"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=6.9.5"
-  },
+  "name": "format-pipe-upgrade",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -28,28 +8,39 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "build_lib": "ng build --prod format-pipe",
+    "npm_pack": "cd dist/format-pipe && npm pack",
+    "package": "npm run build_lib && npm run npm_pack"
   },
-  "private": false,
+  "private": true,
   "dependencies": {
     "@angular/common": "^6.0.3",
     "@angular/core": "^6.0.3",
+    "@angular/compiler": "^6.0.3",
+    "@angular/animations": "^6.0.3",
+    "@angular/forms": "^6.0.3",
+    "@angular/http": "^6.0.3",
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
+    "@angular/router": "^6.0.3",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.3",
+    "@angular-devkit/build-ng-packagr": "~0.6.6",
     "@angular-devkit/build-angular": "~0.6.6",
-    "@angular/compiler": "^6.0.3",
+    "ng-packagr": "^3.0.0-rc.2",
+    "tsickle": ">=0.25.5",
+    "tslib": "^1.7.1",
+    "typescript": "~2.7.2",
+    "@angular/cli": "~6.0.7",
     "@angular/language-service": "^6.0.3",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
-    "coveralls": "^2.13.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
@@ -57,9 +48,8 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.1.2",
-    "ts-node": "~3.2.0",
-    "tslint": "~5.9.1",
-    "typescript": "~2.7.2"
+    "protractor": "~5.3.0",
+    "ts-node": "~5.0.1",
+    "tslint": "~5.9.1"
   }
 }
