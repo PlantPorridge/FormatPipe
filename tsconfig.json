@@ -24,11 +24,11 @@
       "dom"
     ],
     "paths": {
-      "format-pipe": [
-        "dist/format-pipe"
+      "ng-format-pipe": [
+        "dist/ng-format-pipe"
       ],
-      "format-pipe/*": [
-        "dist/format-pipe/*"
+      "ng-format-pipe/*": [
+        "dist/ng-format-pipe/*"
       ]
     }
   }

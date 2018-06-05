@@ -1,5 +1,5 @@
 {
-  "name": "format-pipe-upgrade",
+  "name": "format-pipe",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,10 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build_lib": "ng build --prod format-pipe",
-    "npm_pack": "cd dist/format-pipe && npm pack",
+    "build_lib": "ng build --prod ng-format-pipe",
+    "npm_pack": "cd dist/ng-format-pipe && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
-    "publish-pipe": "npm publish ./dist/format-pipe/"
+    "publish-pipe": "npm publish ./dist/ng-format-pipe/"
   },
   "private": true,
   "dependencies": {
