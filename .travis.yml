@@ -24,6 +24,7 @@ before_script:
    - npm link
 
 script:
+   - npm run build_lib
    - ng build --prod
    - ng test --watch=false --code-coverage
    - npm run coveralls  
