@@ -1,8 +1,7 @@
 {
   "compileOnSave": false,
   "include": [
-    "./src/**/*.ts",
-    // "./projects/**/format.pipe.ts"
+    "./src/**/*.ts"
   ],
   "exclude": [
     "./projects/**/*.ts"
